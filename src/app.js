@@ -30,6 +30,8 @@ $.init.add((done) => {
 
 $.init.load(path.resolve(__dirname, 'init', 'mongodb.js'));
 $.init.load(path.resolve(__dirname, 'model'));
+$.init.load(path.resolve(__dirname, 'service'));
+
 $.init.load(path.resolve(__dirname, 'init', 'express.js'));
 $.init.load(path.resolve(__dirname, 'router'));
 

@@ -17,3 +17,5 @@
 * 5、引入mongoose模块，成功连接到mongodb数据库
 
 > 更新：初始化express, 并引入debu调试
+> 统一异常处理。
+

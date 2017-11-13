@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch" : "npm run clean && babel src -d target -watch",
-    "compile" : "npm run clean && babel src -d target",
-    "dev" : "export NODE_ENV=dev && export DEBUG='my:*' && node target/app.js",
-    "clean" : "rm -Rf target"
+    "watch": "npm run clean && babel src -d target -watch",
+    "compile": "npm run clean && babel src -d target",
+    "dev": "export NODE_ENV=dev && export DEBUG='my:*' && node target/app.js",
+    "clean": "rm -Rf target"
   },
   "repository": {
     "type": "git",

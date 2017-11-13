@@ -8,7 +8,7 @@ module.exports = function(done) {
     const db = mongoose.createConnection($.config.get('db.mongodb'));
 
     const debug = $.createDebug('init:mongodb');
-    debug('connection to Mongodb');
+    debug('connection to MongoDB');
     $.mongodb = db;
     $.model = {};
     done();

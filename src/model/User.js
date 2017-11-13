@@ -7,6 +7,7 @@ module.exports = function (done) {
 
     const User = new Schema({
         name: {type: String, unique: true},
+        email: {type: String, unique: true},
         password: {type: String},
         nikename: {type: String}
     });
