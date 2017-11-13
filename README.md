@@ -16,3 +16,4 @@
 * 4、根据环境变量读取config文件
 * 5、引入mongoose模块，成功连接到mongodb数据库
 
+> 更新：初始化express, 并引入debu调试
