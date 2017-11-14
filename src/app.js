@@ -29,24 +29,18 @@ $.init.add((done) => {
 });
 
 $.init.load(path.resolve(__dirname, 'init', 'mongodb.js'));
-$.init.load(path.resolve(__dirname, 'model'));
-$.init.load(path.resolve(__dirname, 'service'));
+$.init.load(path.resolve(__dirname, 'models'));
+$.init.load(path.resolve(__dirname, 'services'));
 
 $.init.load(path.resolve(__dirname, 'init', 'express.js'));
-$.init.load(path.resolve(__dirname, 'router'));
+$.init.load(path.resolve(__dirname, 'routers'));
+
 
 $.init((err) => {
     if(err) {
         console.error(err);
         process.exit(-1);
     }
-    // const item = new $.model.User({
-    //     name: `User${$.utils.date('ymdHis')}`,
-    //     password: '1234567',
-    //     nikename: '小果果'
-    // });
-
-    // item.save(console.log);
-
+    require('./test.js');
     console.log('app is started by %s', $.env);
 })

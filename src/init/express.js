@@ -7,6 +7,7 @@ import serveStatic from 'serve-static';
 import bodyParser from 'body-parser';
 import multiparty from 'connect-multiparty';
 import path from 'path';
+import session from 'express-session';
 
 module.exports = function (done) {
 
@@ -18,9 +19,11 @@ module.exports = function (done) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(multiparty());
+    app.use(session({
+        secret: $.config.get('web.session.secret')
+    }));
 
     const router = express.Router();
-    // $.router = router;
 
     const routerWrap = {};
     ['get', 'head', 'post', 'put', 'delete'].forEach((method) => {
