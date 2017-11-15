@@ -30,3 +30,12 @@
 ## 2017.11.15
 
 主要完善了发帖，查询，删除以及评论功能。
+
+## 2017.11.16
+
+* 1、从memory sessino到redis session
+* 2、引入nodeman,用于监控文件变化并重启应用
+* 3、webpack整合前端资源(js,css,img)
+* 4、react技术栈：webpack-dev-server, react-hot-loader热加载, 单页面(SPA):react-router路由
+* 5、页面UI采用BootStrap
+* 6、import-loader导入jQuery到bootstrap模块

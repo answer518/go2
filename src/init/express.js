@@ -8,6 +8,8 @@ import bodyParser from 'body-parser';
 import multiparty from 'connect-multiparty';
 import path from 'path';
 import session from 'express-session';
+import _redisStore from 'connect-redis';
+const RedisStore = _redisStore(session);
 
 module.exports = function (done) {
 
@@ -20,7 +22,8 @@ module.exports = function (done) {
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(multiparty());
     app.use(session({
-        secret: $.config.get('web.session.secret')
+        secret: $.config.get('web.session.secret'),
+        store: new RedisStore($.config.get('web.session.redis'))
     }));
 
     const router = express.Router();

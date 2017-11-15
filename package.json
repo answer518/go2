@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npm run clean && babel src -d target -watch",
     "compile": "npm run clean && babel src -d target",
-    "dev": "export NODE_ENV=dev && export DEBUG='my:*,project-core:*' && node target/app.js",
+    "dev": "export NODE_ENV=dev && export DEBUG='my:*,project-core:*' && nodemon target/app.js",
+    "fe:compile": "cd frontend && webpack --progress --colors",
+    "fe:watch": "cd frontend && webpack --progress --colors --watch",
+    "fe:dev": "cd frontend && webpack-dev-server",
     "clean": "rm -Rf target"
   },
   "repository": {
