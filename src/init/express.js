@@ -31,7 +31,7 @@ module.exports = function (done) {
             fnList = fnList.map(fn => {
                 return function (req, res, next) {
                     const ret = fn(req, res, next);
-                    if (ret.catch) ret.catch(next);
+                    if (ret && ret.catch) ret.catch(next);
                 }
             });
             router[method](path, ...fnList);

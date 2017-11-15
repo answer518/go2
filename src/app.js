@@ -33,8 +33,9 @@ $.init.load(path.resolve(__dirname, 'models'));
 $.init.load(path.resolve(__dirname, 'services'));
 
 $.init.load(path.resolve(__dirname, 'init', 'express.js'));
+// 初始化中间件
+$.init.load(path.resolve(__dirname, 'middlewares'));
 $.init.load(path.resolve(__dirname, 'routers'));
-
 
 $.init((err) => {
     if(err) {
