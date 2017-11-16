@@ -29,7 +29,7 @@ module.exports = function (done) {
 
         // await $.method('user.incrScore').call({ _id: req.body.author, score: 5 });
 
-        res.json({ topic }); // es6 如果属性名与属性值相同，是可以省略写的
+        res.apiSuccess({ topic }); // es6 如果属性名与属性值相同，是可以省略写的
 
     });
 
@@ -50,7 +50,7 @@ module.exports = function (done) {
         const count = await $.method('topic.count').call(req.query);
         const pageSize = Math.ceil(count / req.query.limit);
 
-        res.json({ count, page, pageSize, list });
+        res.apiSuccess({ count, page, pageSize, list });
     });
 
 
@@ -76,7 +76,7 @@ module.exports = function (done) {
 
         await $.method('topic.incrPageView').call({ _id: req.params.topic_id });
 
-        res.json(result);
+        res.apiSuccess(result);
 
     });
 

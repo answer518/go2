@@ -42,12 +42,20 @@ module.exports = function (done) {
     });
     $.router = routerWrap;
 
+    // 统一返回值处理
+    app.use(function (req, res, next) {
+        res.apiSuccess = function (data) {
+            res.json({ success: true, result: data });
+        }
+        next();
+    });
+
     app.use(router);
     app.use('/static', serveStatic(path.resolve(__dirname, '../../static')));
 
-    app.use('/api', function(err, req, res, next) {
+    app.use('/api', function (err, req, res, next) {
         debug('API error: %s', err && err.stack || err);
-        res.json({error : err.toString()});
+        res.json({ error: err.toString() });
     });
 
     app.listen($.config.get('web.port'), (err) => {

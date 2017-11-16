@@ -9,7 +9,8 @@ module.exports = {
     ],
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/build'
     },
     module: {
         loaders: [{
@@ -45,14 +46,14 @@ module.exports = {
             colors: true
         },
         hot: true,
-        /*proxy: {
+        proxy: {
             '*': 'http://127.0.0.1:3001',
-        }*/
+        }
     },
     babel: {
         presets: ['react', 'es2015']
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-      ]
+    ]
 }

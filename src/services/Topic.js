@@ -70,6 +70,7 @@ module.exports = function (done) {
             model: 'User',
             select: 'nickname about',
         });
+        // notice: skip,limit必须是数字不能是字符串
         if (params.skip) ret.skip(Number(params.skip));
         if (params.limit) ret.limit(Number(params.limit));
 
