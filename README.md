@@ -39,3 +39,10 @@
 * 4、react技术栈：webpack-dev-server, react-hot-loader热加载, 单页面(SPA):react-router路由
 * 5、页面UI采用BootStrap
 * 6、import-loader导入jQuery到bootstrap模块
+
+## 2017.11.17
+
+构建可视化界面：
+* 1、引入React组件技术构建页面
+* 2、react-router实现页面路由
+* 3、webpack-dev-server反向代理，前后端联调
