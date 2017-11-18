@@ -33,7 +33,7 @@
 
 ## 2017.11.16
 
-* 1、从memory sessino到redis session
+* 1、从memory session到redis session
 * 2、引入nodeman,用于监控文件变化并重启应用
 * 3、webpack整合前端资源(js,css,img)
 * 4、react技术栈：webpack-dev-server, react-hot-loader热加载, 单页面(SPA):react-router路由
@@ -46,3 +46,14 @@
 * 1、引入React组件技术构建页面
 * 2、react-router实现页面路由
 * 3、webpack-dev-server反向代理，前后端联调
+
+
+## 2017.11.18
+* 1、解决热更新的问题：将Router组件放到entry.js入口文件，修改其它组件就会自动更新。
+
+# 参考资料
+
+* [Webpack-dev-server: proxy](http://webpack.github.io/docs/webpack-dev-server.html#bypass-the-proxy)
+* [react-hot-loader](http://gaearon.github.io/react-hot-loader/getstarted/)
+* [react-router](https://github.com/reactjs/react-router)
+* [react-router中文文档](http://react-guide.github.io/react-router-cn/)
