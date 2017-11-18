@@ -1,7 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router';
+import {loginUser, logout, notificationCount} from '../lib/client';
 
 export default class Header extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+
+    componentDidMount() {
+        loginUser()
+            .then(user => this.setState({ user }))
+            .catch(err => console.error(err));
+        // notificationCount(false)
+        //     .then(notificationCount => this.setState({ notificationCount }))
+        //     .catch(err => console.error(err));
+    }
+
+    handleLogout() {
+        logout()
+            .then(user => location.reload())
+            .catch(err => console.error(err));
+    }
+
     render() {
         return (<nav className="navbar navbar-default">
             <div className="container-fluid">
@@ -21,6 +43,17 @@ export default class Header extends React.Component {
                         </li>
                         <li><Link to="/new"><i className="glyphicon glyphicon-plus"></i> 发帖</Link></li>
                     </ul>
+                    {this.state.user ? (
+                    <ul className="nav navbar-nav navbar-right">
+                        <li><Link to="/profile">设置</Link></li>
+                        <li><a href="#" onClick={this.handleLogout.bind(this)}>注销 [{this.state.user.nikename}]</a></li>
+                    </ul>
+                    ) : (
+                    <ul className="nav navbar-nav navbar-right">
+                        <li><Link to="/login">登录</Link></li>
+                        <li><Link to="/signup">注册</Link></li>
+                    </ul>
+                    )}
                 </div>
             </div>
         </nav>)
