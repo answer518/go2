@@ -1,5 +1,7 @@
 import React from 'react';
-import { getTopicDetail } from '../lib/client';
+import 'highlight.js/styles/github-gist.css';
+import {getTopicDetail, addComment, deleteComment, deleteTopic} from '../lib/client';
+import {renderMarkdown, redirectURL} from '../lib/utils';
 
 export default class TopicDetail extends React.Component {
 
@@ -9,8 +11,15 @@ export default class TopicDetail extends React.Component {
     }
 
     componentDidMount() {
-        getTopicDetail(this.props.params.id).then((topic) => this.setState({ topic }))
-            .catch((err) => console.log(err));
+        getTopicDetail(this.props.params.id).then((topic) => {
+            topic.html = renderMarkdown(topic.content);
+            if (topic.comments) {
+                for (const item of topic.comments) {
+                    item.html = renderMarkdown(item.content);
+                }
+            }
+            this.setState({ topic });
+        }).catch((err) => console.log(err));
     }
 
     render() {
@@ -23,10 +32,10 @@ export default class TopicDetail extends React.Component {
         return (
             <div>
                 <h2>{topic.title}</h2>
-                <section>{topic.content}</section>
+                <section dangerouslySetInnerHTML={{__html: topic.html}}></section>
                 <ul className="list-group">
                     {topic.comments.map((item, i) => {
-                        <li className="list-group-item">
+                        <li className="list-group-item" key={i}>
                             {item.authorId}于{item.createAt}说: <br />{item.content}
                         </li>
                     })}
