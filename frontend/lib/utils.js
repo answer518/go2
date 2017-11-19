@@ -1,3 +1,3 @@
-export function redirectUrl() {
-    
+export function redirectURL(url) {
+    location = url;
 }

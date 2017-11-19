@@ -2,7 +2,7 @@ import React from 'react';
 import jQuery from 'jquery';
 import { Link } from 'react-router';
 import { login } from '../lib/client';
-// import { redirectURL } from '../lib/utils';
+import { redirectURL } from '../lib/utils';
 
 export default class Login extends React.Component {
 

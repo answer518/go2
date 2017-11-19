@@ -22,15 +22,14 @@ export function request(method, path, data) {
                 let data;
                 try {
                     data = JSON.parse(body.toString());
-                } catch (err) {
-                    return reject(new Error('parse json data error : ' + err.message));
+                } catch (error) {
+                    return reject(new Error('parse json data error : ' + error.message));
                 }
-                if (data.err) {
-                    reject(data.err);
+                if (data.error) {
+                    reject(data.error);
                 } else {
                     resolve(data.result);
                 }
-
             }
         });
     })
