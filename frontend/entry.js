@@ -7,6 +7,7 @@ import Login from './component/Login';
 import TopicDetail from './component/TopicDetail';
 import NewTopic from './component/NewTopic';
 import EditTopic from './component/EditTopic';
+import Siginup from './component/Siginup';
 
 ReactDom.render((
     <Router history={browserHistory}>
@@ -15,6 +16,7 @@ ReactDom.render((
             <Route path="topic/:id/edit" component={EditTopic} />
             <Route path="new" component={NewTopic} />
             <Route path="login" component={Login} />
+            <Route path="siginup" component={Siginup} />
         </Route>
     </Router>
 ) , document.getElementById('app'));

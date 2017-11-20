@@ -4,9 +4,8 @@
  */
 
 // $.method('user.add').call({
-//     name: `superman`,
-//     email: 'iamnabob@126.com',
+//     name: `test7`,
+//     email: 'test7@qq.com',
 //     password: '1234567',
-//     nikename: '小果果',
-//     about: '谁怕岁呢'
+//     nikename: 'i am test7'
 // }, console.log);

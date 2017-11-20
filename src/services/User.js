@@ -25,8 +25,15 @@ module.exports = function (done) {
         }
 
         params.password = $.utils.encryptPassword(params.password.toString());
-        const user = new $.model.User(params);
-
+        // console.log(params.nickname);
+        const user = new $.model.User({
+            name: params.name,
+            email: params.email,
+            nickname: params.nickname, // nickname 不能保存？
+            password: params.password,
+            about: params.about
+        });
+        // console.log(user.likename);
         return user.save();
     });
 

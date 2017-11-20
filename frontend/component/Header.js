@@ -51,7 +51,7 @@ export default class Header extends React.Component {
                     ) : (
                     <ul className="nav navbar-nav navbar-right">
                         <li><Link to="/login">登录</Link></li>
-                        <li><Link to="/signup">注册</Link></li>
+                        <li><Link to="/siginup">注册</Link></li>
                     </ul>
                     )}
                 </div>

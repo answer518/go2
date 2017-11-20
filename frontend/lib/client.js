@@ -55,8 +55,8 @@ export function logout() {
     return request('post', 'loginout');
 }
 
-export function signup(name, email, password, nickname) {
-    return request('post', 'signup', { name, email, password, nickname });
+export function siginup(name, email, password, nickname) {
+    return request('post', 'siginup', { name, email, password, nickname });
 }
 
 export function addTopic(title, tags, content) {
