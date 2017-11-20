@@ -16,6 +16,10 @@ export default class TopicList extends React.Component {
         });
     }
 
+    /**
+     * 此函数在每次状态改变时会执行
+     * @param {*} nextProps 
+     */
     componentWillReceiveProps(nextProps) {
         this.updateList({
             tags: nextProps.location.query.tags,
@@ -45,7 +49,10 @@ export default class TopicList extends React.Component {
                 <ul className="list-group">
                     {list.map((item, i) => {
                         return (
-                            <Link to={`/topic/${item._id}`} className="list-group-item" key={i}>{item.title}</Link>
+                            <Link to={`/topic/${item._id}`} className="list-group-item" key={i}>
+                                {item.title}
+                                <span className="pull-right">{item.author.shortname} 发表于 {item.createdAt}，阅读量：{item.pageView || 0}</span>
+                            </Link>
                         )
                     })}
                 </ul>

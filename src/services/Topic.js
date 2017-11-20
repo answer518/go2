@@ -35,15 +35,14 @@ module.exports = function (done) {
             .populate({
                 path: 'author',
                 model: 'User',
-                select: 'nickname about',
+                select: 'shortname about',
             }).populate({
                 path: 'comments.author',
                 model: 'User',
-                select: 'nickname about',
+                select: 'shortname about',
             });
 
     });
-
 
     $.method('topic.list').check({
         author: { validate: (v) => validator.isMongoId(String(v)) },
@@ -68,7 +67,7 @@ module.exports = function (done) {
         }).populate({
             path: 'author',
             model: 'User',
-            select: 'nickname about',
+            select: 'shortname about',
         });
         // notice: skip,limit必须是数字不能是字符串
         if (params.skip) ret.skip(Number(params.skip));

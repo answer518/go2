@@ -9,7 +9,8 @@ module.exports = function (done) {
         name: {type: String, unique: true},
         email: {type: String, unique: true},
         password: {type: String},
-        nikename: {type: String}
+        shortname: {type: String},
+        about: {type: String}
     });
 
     $.mongodb.model('User', User);

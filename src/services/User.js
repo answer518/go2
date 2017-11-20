@@ -29,11 +29,11 @@ module.exports = function (done) {
         const user = new $.model.User({
             name: params.name,
             email: params.email,
-            nickname: params.nickname, // nickname 不能保存？
+            shortname: params.nickname, // nickname 不能保存？
             password: params.password,
             about: params.about
         });
-        // console.log(user.likename);
+        // console.log(user.shortname);
         return user.save();
     });
 
