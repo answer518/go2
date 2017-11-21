@@ -63,6 +63,7 @@ module.exports = function (done) {
         const isAdmin = req.session.user && req.session.user.isAdmin;
 
         const result = {};
+        // mongod对象不能直接修改，所以需要clone一份修改完成后继续更新
         result.topic = $.utils.cloneObject(topic);
         result.topic.permission = {
             edit: isAdmin || userId === result.topic.author._id,

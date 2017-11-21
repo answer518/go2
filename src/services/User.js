@@ -25,7 +25,6 @@ module.exports = function (done) {
         }
 
         params.password = $.utils.encryptPassword(params.password.toString());
-        // console.log(params.nickname);
         const user = new $.model.User({
             name: params.name,
             email: params.email,
@@ -33,7 +32,6 @@ module.exports = function (done) {
             password: params.password,
             about: params.about
         });
-        // console.log(user.shortname);
         return user.save();
     });
 

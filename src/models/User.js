@@ -10,7 +10,8 @@ module.exports = function (done) {
         email: {type: String, unique: true},
         password: {type: String},
         shortname: {type: String},
-        about: {type: String}
+        about: {type: String},
+        isAdmin: {type:Boolean}
     });
 
     $.mongodb.model('User', User);
