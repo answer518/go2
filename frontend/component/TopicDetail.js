@@ -67,7 +67,11 @@ export default class TopicDetail extends React.Component {
                 <p>
                     <Link to={`/topic/${topic._id}/edit`} className="btn btn-xs btn-primary">
                         <i className="glyphicon glyphicon-edit"></i> 编辑
-                </Link>
+                    </Link>
+                    &nbsp;&nbsp;
+                    <button className="btn btn-xs btn-danger" onClick={this.handleDeleteTopic.bind(this)}>
+                        <i className="glyphicon glyphicon-trash"></i> 删除
+                    </button>
                 </p>
                 <section dangerouslySetInnerHTML={{ __html: topic.html }}></section>
                 <CommentEditor
