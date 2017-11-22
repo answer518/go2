@@ -146,15 +146,15 @@ module.exports = function (done) {
         const topic = await $.method('topic.get').call({ _id: params._id });
         if (!topic) throw new Error('topic does not exists');
 
-        // await $.method('notification.add').call({
-        //     from: params.author,
-        //     to: topic.author._id,
-        //     type: 'topic_comment',
-        //     data: {
-        //         _id: params._id,
-        //         title: topic.title,
-        //     },
-        // });
+        await $.method('notification.add').call({
+            from: params.author,
+            to: topic.author._id,
+            type: 'topic_comment',
+            data: {
+                _id: params._id,
+                title: topic.title,
+            },
+        });
 
         // const fromUser = await $.method('user.get').call({ _id: params.author });
         // const toUser = await $.method('user.get').call({ _id: topic.author._id });

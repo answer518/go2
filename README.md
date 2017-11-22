@@ -62,6 +62,12 @@
 * 5、删除主题
 * 6、管理员权限（发帖、删帖、评论等权限控制)
 
+## 2017.11.22
+* 1、回复评论时消息通知
+* 2、请求频率限制（IP注册用户、发帖、评论、登录失败次数）。
+* 3、访问统计pageView
+* 4、用户积分
+
 # 参考资料
 
 * [Webpack-dev-server: proxy](http://webpack.github.io/docs/webpack-dev-server.html#bypass-the-proxy)

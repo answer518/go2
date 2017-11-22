@@ -9,6 +9,7 @@ import NewTopic from './component/NewTopic';
 import EditTopic from './component/EditTopic';
 import Siginup from './component/Siginup';
 import Profile from './component/Profile';
+import Notification1 from './component/Notification';
 
 ReactDom.render((
     <Router history={browserHistory}>
@@ -19,6 +20,7 @@ ReactDom.render((
             <Route path="login" component={Login} />
             <Route path="siginup" component={Siginup} />
             <Route path="profile" component={Profile} />
+            <Route path="notification" component={Notification1} />
         </Route>
     </Router>
 ) , document.getElementById('app'));

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import {loginUser, logout, notificationCount} from '../lib/client';
+import { loginUser, logout, notificationCount } from '../lib/client';
 
 export default class Header extends React.Component {
 
@@ -13,9 +13,9 @@ export default class Header extends React.Component {
         loginUser()
             .then(user => this.setState({ user }))
             .catch(err => console.error(err));
-        // notificationCount(false)
-        //     .then(notificationCount => this.setState({ notificationCount }))
-        //     .catch(err => console.error(err));
+        notificationCount(false)
+            .then(notificationCount => this.setState({ notificationCount }))
+            .catch(err => console.error(err));
     }
 
     handleLogout() {
@@ -44,16 +44,21 @@ export default class Header extends React.Component {
                         <li><Link to="/new"><i className="glyphicon glyphicon-plus"></i> 发帖</Link></li>
                     </ul>
                     {this.state.user ? (
-                    <ul className="nav navbar-nav navbar-right">
-                        <li><Link to="/profile">个人信息</Link></li>
-                        <li><a href="#" onClick={this.handleLogout.bind(this)}>注销 [{this.state.user.shortname}]</a></li>
-                    </ul>
+                        <ul className="nav navbar-nav navbar-right">
+                            <li><Link to="/profile">个人信息</Link></li>
+                            <li>
+                                <Link to="/notification">消息
+                                    {this.state.notificationCount > 0 ? <span className="text-danger">({this.state.notificationCount}未读)</span> : null}
+                                </Link>
+                            </li>
+                            <li><a href="#" onClick={this.handleLogout.bind(this)}>注销 [{this.state.user.shortname}]</a></li>
+                        </ul>
                     ) : (
-                    <ul className="nav navbar-nav navbar-right">
-                        <li><Link to="/login">登录</Link></li>
-                        <li><Link to="/siginup">注册</Link></li>
-                    </ul>
-                    )}
+                            <ul className="nav navbar-nav navbar-right">
+                                <li><Link to="/login">登录</Link></li>
+                                <li><Link to="/siginup">注册</Link></li>
+                            </ul>
+                        )}
                 </div>
             </div>
         </nav>)
