@@ -68,6 +68,12 @@
 * 3、访问统计pageView
 * 4、用户积分
 
+## 2017.11.23
+* 1、发送邮件：nodemailer模块
+* 2、邮件验证码： redis实现
+* 3、第三方登录：passport
+* 4、GitHub第三方登录
+
 # 参考资料
 
 * [Webpack-dev-server: proxy](http://webpack.github.io/docs/webpack-dev-server.html#bypass-the-proxy)
