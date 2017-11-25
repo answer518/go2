@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test":"npm run complie && npm run test:dev",
+    "test:dev": "export NODE_ENV=dev,test && export DEBUG='my:*,project-core:*' && mocha target/test/* -t 5000",
     "watch": "npm run clean && babel src -d target -watch",
     "compile": "npm run clean && babel src -d target",
     "dev": "export NODE_ENV=dev && export DEBUG='my:*,project-core:*' && cd target && nodemon app.js",

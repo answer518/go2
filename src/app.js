@@ -10,7 +10,7 @@ import createDebug from 'debug';
 
 const $ = global.$ = new projectCore();
 
-$.createDebug = function(name) {
+$.createDebug = function (name) {
     return createDebug('my:' + name);
 }
 
@@ -18,10 +18,13 @@ const debug = $.createDebug('app');
 
 $.init.add((done) => {
     $.config.load(path.resolve(__dirname, 'config.js'));
-    const env = process.env.NODE_ENV|| null;
-    if(env) {
-        debug('load env: %s', env);
-        $.config.load(path.resolve(__dirname, '../config', env + '.js'));
+    const env = process.env.NODE_ENV || null;
+
+    if (env) {
+        env.split(',').forEach((item, i) => {
+            debug('load env: %s', item);
+            $.config.load(path.resolve(__dirname, '../config', item + '.js'));
+        });
     }
 
     $.env = env;
@@ -40,10 +43,10 @@ $.init.load(path.resolve(__dirname, 'middlewares'));
 $.init.load(path.resolve(__dirname, 'routers'));
 
 $.init((err) => {
-    if(err) {
+    if (err) {
         console.error(err);
         process.exit(-1);
     }
-    require('./test.js');
+    // require('./test.js');
     console.log('app is started by %s', $.env);
 })
