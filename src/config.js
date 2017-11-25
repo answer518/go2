@@ -6,7 +6,7 @@
  * @param {*} get 
  * @param {*} has 
  */
-module.exports = function(set, get, has) {
+module.exports = function (set, get, has) {
     set('web.port', 3000);
     set('web.session.secret', 'test');
     set('web.session.redis', {
@@ -19,5 +19,12 @@ module.exports = function(set, get, has) {
         host: '127.0.0.1',
         port: 6379,
         prefix: 'L:'
+    });
+
+    // captcha redis connection
+    set('captcha.redis', {
+        host: '127.0.0.1',
+        port: 6379,
+        prefix: 'C:',
     });
 }

@@ -71,6 +71,7 @@ module.exports = function (done) {
         const update = {};
         if (params.name) update.name = params.name;
         if (params.email) update.email = params.email;
+        if (params.githubUsername) update.githubUsername = params.githubUsername;
         if (params.password) update.password = params.password;
         if (params.nickname) update.nickname = params.nickname;
         if (params.about) update.about = params.about;

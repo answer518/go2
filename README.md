@@ -74,6 +74,19 @@
 * 3、第三方登录：passport
 * 4、GitHub第三方登录
 
+## 2017.11.24
+
+单元测试的重要性：
+
+> 写好规则，自动化的完成测试，减少人工测试成本
+
+* 1、BDD: Behavior Driven Development
+* 2、TDD: Test-Driven Development
+
+> (从开发的角度看TDD和BDD之分)[https://www.cnblogs.com/bigdataZJ/p/AutoTesting1.html]
+
+> [http://www.cnblogs.com/bigdataZJ/p/AutoTesting1.html](http://www.cnblogs.com/bigdataZJ/p/AutoTesting1.html)
+
 # 参考资料
 
 * [Webpack-dev-server: proxy](http://webpack.github.io/docs/webpack-dev-server.html#bypass-the-proxy)

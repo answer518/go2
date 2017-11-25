@@ -8,6 +8,7 @@ import TopicDetail from './component/TopicDetail';
 import NewTopic from './component/NewTopic';
 import EditTopic from './component/EditTopic';
 import Siginup from './component/Siginup';
+import ResetPassword from './component/ResetPassword';
 import Profile from './component/Profile';
 import Notification1 from './component/Notification';
 
@@ -19,8 +20,9 @@ ReactDom.render((
             <Route path="new" component={NewTopic} />
             <Route path="login" component={Login} />
             <Route path="siginup" component={Siginup} />
+            <Route path="reset_password" component={ResetPassword} />
             <Route path="profile" component={Profile} />
             <Route path="notification" component={Notification1} />
         </Route>
     </Router>
-) , document.getElementById('app'));
+), document.getElementById('app'));
