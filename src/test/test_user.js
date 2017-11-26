@@ -30,14 +30,14 @@ describe('user', function () {
             expect(ret.user.email).to.equal('super@example.com');
         }
 
-        // {
-        //     const ret = await request.post('/api/login', {
-        //         name: 'test1',
-        //         password: '123456789',
-        //     });
-        //     console.log(ret);
-        //     expect(ret.token).to.be.a('string');
-        // }
+        {
+            const ret = await request.post('/api/login', {
+                name: 'super',
+                password: '123456789',
+            });
+            console.log(ret);
+            expect(ret.token).to.be.a('string');
+        }
 
     });
 
