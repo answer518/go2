@@ -83,7 +83,7 @@
 * 1、BDD: Behavior Driven Development
 * 2、TDD: Test-Driven Development
 
-> (从开发的角度看TDD和BDD之分)[https://www.cnblogs.com/bigdataZJ/p/AutoTesting1.html]
+(从开发的角度看TDD和BDD之分)[https://www.cnblogs.com/bigdataZJ/p/AutoTesting1.html]
 
 * 3、单元测试框架Mocha来组织运行我们的测试代码
 * 4、Assert断言用于测试结果是否是期望的值，node内置了一个Assert模块，可以直接使用

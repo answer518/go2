@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test":"npm run complie && npm run test:dev",
+    "test":"npm run compile && npm run test:dev",
     "test:dev": "export NODE_ENV=dev,test && export DEBUG='my:*,project-core:*' && mocha target/test/* -t 5000",
     "watch": "npm run clean && babel src -d target -watch",
     "compile": "npm run clean && babel src -d target",
