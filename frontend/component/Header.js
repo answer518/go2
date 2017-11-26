@@ -11,15 +11,15 @@ export default class Header extends React.Component {
 
     componentDidMount() {
         loginUser()
-            .then(user => this.setState({ user }))
+            .then(user => {
+                this.setState({ user });
+                if (user) {
+                    notificationCount(false)
+                        .then(notificationCount => this.setState({ notificationCount }))
+                        .catch(err => console.error(err));
+                }
+            })
             .catch(err => console.error(err));
-
-        if (this.state.user) {
-            notificationCount(false)
-                .then(notificationCount => this.setState({ notificationCount }))
-                .catch(err => console.error(err));
-        }
-
     }
 
     handleLogout() {
