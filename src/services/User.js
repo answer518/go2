@@ -5,10 +5,11 @@
 import validator from 'validator';
 
 module.exports = function (done) {
+
     $.method('user.add').check({
-        name: { require: true, validate: (v) => validator.isLength(v, { min: 4, max: 20 }) && /^[A-Za-z]/.test(v) },
-        emai: { require: true, validate: (v) => validator.isEmail(v) },
-        password: { require: true, validate: (v) => validator.isLength(v, { min: 6 }) }
+        name: { required: true, validate: (v) => validator.isLength(v, { min: 4, max: 20 }) && /^[a-zA-Z]/.test(v) },
+        email: { required: true, validate: (v) => validator.isEmail(v) },
+        password: { required: true, validate: (v) => validator.isLength(v, { min: 6 }) },
     });
 
     $.method('user.add').register(async function (params, callback) {
@@ -60,8 +61,8 @@ module.exports = function (done) {
 
     $.method('user.update').check({
         _id: { validate: (v) => validator.isMongoId(v) },
-        name: { require: true, validate: (v) => validator.isLength(v, { min: 4, max: 20 }) && /^[A-Za-z]/.test(v) },
-        emai: { require: true, validate: (v) => validator.isEmail(v) }
+        name: { required: true, validate: (v) => validator.isLength(v, { min: 4, max: 20 }) && /^[A-Za-z]/.test(v) },
+        emai: { required: true, validate: (v) => validator.isEmail(v) }
     });
 
     $.method('user.update').register(async function (params, callback) {

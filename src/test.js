@@ -13,6 +13,43 @@
 import supertest from 'supertest';
 import './app.js';
 
+// 清空Redis数据
+$.init.add(done => {
+    $.limiter.connection.keys($.config.get('limiter.redis.prefix') + '*', (err, keys) => {
+        if (err) return done(err);
+        if (keys.length > 0) {
+            $.limiter.connection.del(keys, done);
+        } else {
+            done();
+        }
+    });
+});
+
+// 还没有实现验证码
+// $.init.add(done => {
+//     $.captcha.connection.keys($.config.get('captcha.redis.prefix') + '*', (err, keys) => {
+//         if (err) return done(err);
+//         if (keys.length > 0) {
+//             $.captcha.connection.del(keys, done);
+//         } else {
+//             done();
+//         }
+//     });
+// });
+
+// 清空mongod数据库
+$.init.add(done => {
+    $.mongodb.db.dropDatabase(done);
+});
+$.init.add(async function () {
+    const data = require('./test.db');
+    for (const name in data) {
+        for (const item of data[name]) {
+            await $.mongodb.db.collection(name).save(item);
+        }
+    }
+});
+
 function makeRequest(agent, method, path, params) {
     return new Promise((resolve, reject) => {
         $.ready(() => {
