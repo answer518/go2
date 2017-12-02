@@ -90,6 +90,15 @@
 * 5、使用第三方的断言库，有更多友好的API
 * 6、代理HTTP请求：supertest
 
+## 2017.11.26
+
+部署到Linux服务器的过程
+
+* 1、配置公钥登录：1、免密登录；2、密码登录不安全，会被破解; 使用证书登录，同时关闭密码登录,比较安全。
+* 2、tmux虚拟终端的使用。
+* 3、安装docker。
+* 4、配置docker国内镜像，并且安装redis,mongodb数据库
+
 # 参考资料
 
 * [Webpack-dev-server: proxy](http://webpack.github.io/docs/webpack-dev-server.html#bypass-the-proxy)
